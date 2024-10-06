@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema 3 keydown</title>
+</head>
+<body>
+
+    <div id="key" style="width: 200px; height: 200px; background-color: white; border: 2px solid black;"></div>
+
+    <script>
+
+        function cambiarColor(color) {
+            key.style.backgroundColor = color;
+        }
+
+        function crearDiv(color) {
+            const nuevoDiv = document.createElement('div');
+            nuevoDiv.style.width = '200px';
+            nuevoDiv.style.height = '200px';
+            nuevoDiv.style.backgroundColor = color;
+            nuevoDiv.style.border = '2px solid black';
+            document.body.appendChild(nuevoDiv);
+        }   
+
+        let color;
+
+        const key = document.getElementById('key')
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'a') {
+                color = 'pink'
+                cambiarColor(color);
+            } else if (event.key === 's') {
+                color = 'orange'
+                cambiarColor(color);
+            }else if (event.key === 'd') {
+                color = 'lightblue'
+                cambiarColor(color);
+            }else if(event.key === 'q'){
+                color = 'purple'
+                crearDiv(color)
+            }else if(event.key === 'w'){
+                color = 'gray'
+                crearDiv(color)
+            }else if(event.key === 'e'){
+                color = 'brown'
+                crearDiv(color)
+            }
+        })
+
+             
+
+    </script>
+</body>
+</html>
